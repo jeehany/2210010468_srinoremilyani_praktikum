@@ -19,7 +19,8 @@
                     <div class="invalid-feedback">
                         <?php echo form_error('username') ?>
                     </div>
-                </div>
+                </div> 
+                
                 <div class="mb-3">
                     <label for="full_name">FULL NAME <code>*<code></label>
                     <input type="text" class="form-control" name="full_name" placeholder="FULL NAME" required/>
