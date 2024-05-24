@@ -10,4 +10,19 @@ class User_Model extends CI_Model
     {
         return $this->db->where('is_active', 1)->get($this->_table)->result();
     }
+
+    public function save(){
+        $data = array(
+            'nik' => htmlspecialchars($this->input->post('nik'), true),
+            'username' => htmlspecialchars($this->input->post('username'), true),
+            'password' => htmlspecialchars($this->input->post('password'), PASSWORD_DEFAULT),
+            'email' => htmlspecialchars($this->input->post('email'), true),
+            'full_name' => htmlspecialchars($this->input->post('full_name'), true),
+            'phone' => htmlspecialchars($this->input->post('phone'), true),
+            'alamat' => htmlspecialchars($this->input->post('alamat'), true),
+            'role' => htmlspecialchars($this->input->post('role'), true),
+            'is_active' => 1,
+        );
+        return $this->db->insert($this->_table,$data);
+    }
 }
