@@ -37,5 +37,15 @@ class User extends CI_Controller {
         redirect('user');
     }
 
+    public function getedit($id)
+    {
+        $data = array(
+            'title' => 'update Data user',
+            'user' => $this->User_model->getById($id),
+            'content' => 'user/edit_form'
+        );
+        $this->load->view('template/main',$data);
+    }
+
 
 }
