@@ -11,7 +11,7 @@
              </div>
              <?php if ($this->session->flashdata('success')) : ?>
                  <div class="alert alert-success" role="alert">
-                     <?php $this->session->flashdata('success') ?>
+                     <?php echo $this->session->flashdata('success'); ?>
                  </div>
              <?php endif; ?>
              <div class="card-body">

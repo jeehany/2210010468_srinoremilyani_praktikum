@@ -56,7 +56,7 @@ class User extends CI_Controller {
         redirect('user');
     }
 
-    public function delete($id)
+    function delete($id)
     {
         $this->User_model->delete($id);
         if($this->db->affected_rows()>0){
