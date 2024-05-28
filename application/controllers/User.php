@@ -30,7 +30,7 @@ class User extends CI_Controller {
 
     public function save()
     {
-        $this->User_model->Save();
+        $this->User_model->save();
         if($this->db->affected_rows()>0){
             $this->session->set_flashdata("success","Data user berhasil disimpan");
         }
@@ -45,6 +45,15 @@ class User extends CI_Controller {
             'content' => 'user/edit_form'
         );
         $this->load->view('template/main',$data);
+    }
+
+    public function edit()
+    {
+        $this->User_model->editData();
+        if($this->db->affected_rows()>0){
+            $this->session->set_flashdata("success","Data user berhasil diupdate");
+        }
+        redirect('user');
     }
 
 
