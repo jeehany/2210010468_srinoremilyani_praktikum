@@ -42,5 +42,10 @@ class User_model extends CI_Model
         );
         return $this->db->set($data)->where($this->primary, $id)->update($this->_table);
     }
+
+    public function delete($id)
+    {
+        return $this->db->where($this->primary, $id)->delete($this->_table);
+    }
 }
 ?>

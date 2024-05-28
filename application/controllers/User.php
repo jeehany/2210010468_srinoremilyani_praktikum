@@ -56,5 +56,12 @@ class User extends CI_Controller {
         redirect('user');
     }
 
-
+    public function delete($id)
+    {
+        $this->User_model->delete($id);
+        if($this->db->affected_rows()>0){
+            $this->session->set_flashdata("success","Data user berhasil dihapus");
+        }
+        redirect('user');
+    }
 }
