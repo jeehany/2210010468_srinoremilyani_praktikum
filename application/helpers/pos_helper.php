@@ -1,8 +1,7 @@
 <?php
 function infoLogin(){
     $ci = get_instance();
-    return $ci->db->get_where('tb_user', ['username' => $ci->session-
-    >userdata('username')])->row_array();
+    return $ci->db->get_where('user', ['username' => $ci->session->userdata('username')])->row_array();
 }
 
 function cek_login(){
@@ -13,8 +12,7 @@ function cek_login(){
 }
 function cek_user(){
     $ci = get_instance();
-    $user = $ci->db->get_where('tb_user', ['username' => $ci->session-
-    >userdata('username')])->row_array();
+    $user = $ci->db->get_where('user', ['username' => $ci->session->userdata('username')])->row_array();
     if($user['role'] == 'admin'){
 
     }else{
